@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: forcet-deployment
+  namespace: mario
+  labels:
+    app: forcet-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: forcet-app
+  template:
+    metadata:
+      labels:
+        app: forcet-app
+    spec:
+      containers:
+        - name: hola-node
+          image: forcet22/hola-node:1.0.0 
+          ports:
+            - containerPort: 3000
+          envFrom:
+            - configMapRef:
+                name: forcet-config
+            - secretRef:
+                name: forcet-secret

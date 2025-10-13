@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: forcet-config
+  namespace: mario
+data:
+  APP_PORT: "8080"
