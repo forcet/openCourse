@@ -1,4 +1,5 @@
 microk8s kubectl apply -f ks8.yml
 microk8s kubectl get Namespace
+microk8s dashboard-proxy
 
 microk8s kubectl port-forward service/forcet-service 3500:4000 -n mario
