@@ -87,5 +87,5 @@ jobs:
       - name: Deploy files
         run: |
           oc project forcet22-dev
-          oc apply -f openshift/config/deployment.yaml
+          oc apply -f openshift/config/deployment.yml
           oc rollout status deployment/forcet-deployment
