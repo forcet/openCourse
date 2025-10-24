@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: forcet-node
-          image: image-registry.openshift-image-registry.svc:5000/forcet22-dev/forcet-example:build-{{ tag }}
+          image: forcet22/hola-node:build-{{ tag }}
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
