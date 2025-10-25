@@ -1,11 +1,10 @@
-import express, { Request, Response } from "express";
+import express from "express";
+import genericRouter  from "./routes/Generic"
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.APP_PORT || 3001;
 
-app.get("/", (_req: Request, res: Response) => {
-  res.send("Hola Mundo");
-});
+app.use(genericRouter);
 
 app.listen(port, () => {
   console.log(`Servidor TS escuchando en http://localhost:${port}`);
