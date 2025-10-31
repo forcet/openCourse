@@ -1,0 +1,38 @@
+name: forcet-node
+
+namespace: forcet22-dev
+
+replicaCount: 2
+
+container:
+  image: "forcet22/hola-node"
+  tag: "{{ tag }}"
+  port: 3000
+  failureThreshold: 5
+  initialDelaySeconds: 0
+  periodSeconds: 10
+
+service:
+  type: ClusterIP
+  port: 4000
+  targetPort: 3000
+  protocol: TCP
+
+resources:
+  requests:
+    cpu: "500m"
+    memory: "800Mi"
+  limits:
+    cpu: "1000m"
+    memory: "1500Mi"
+
+hpa:
+  minReplicas: 1
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 75
+
+configmap:
+  newAService: "http://forcet-lucky-service.forcet22-dev.svc.cluster.local:4000/lucky"
+
+secret:
+  password: "hola"
