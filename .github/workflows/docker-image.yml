@@ -90,5 +90,5 @@ jobs:
           cat helm/values.yml
       - name: Deploy files
         run: |
-          helm show chart oci://registry-1.docker.io/${{ secrets.DOCKER_USERNAME  }}/helm-data --version 9
-          helm upgrade --install forcet-node oci://registry-1.docker.io/${{ secrets.DOCKER_USERNAME  }}/helm-data --version 9 --values helm/values.yml
+          helm show chart oci://registry-1.docker.io/${{ secrets.DOCKER_USERNAME  }}/helm-data --version 10
+          helm upgrade --install forcet-node oci://registry-1.docker.io/${{ secrets.DOCKER_USERNAME  }}/helm-data --version 10 --values helm/values.yml
