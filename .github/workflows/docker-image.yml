@@ -9,7 +9,7 @@ on:
 
 jobs:
   build-and-deploy:
-    uses: forcet22/devops-pipelines/.github/workflows/docker-image-poke-data.yml@main
+    uses: forcet/devops-pipelines/.github/workflows/docker-image-poke-data.yml@main
     with:
       docker_image_name: hola-node
       helm_name: forcet-node
